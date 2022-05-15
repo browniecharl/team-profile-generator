@@ -4,7 +4,7 @@ const Engineer = require('./lib/Engineer');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-const teamPage = require('./src/teamPage')
+const generatePage = require('./src/generatePage')
 const teamProfile = [];
 const profileQuestions = [ {
         type: 'list',
@@ -93,7 +93,19 @@ const profileQuestions = [ {
             }
         }
     },
+    {
+        type: 'confirm',
+        name: 'confirmEmployee',
+        message: 'Would you like to enter another employee?',
+        default: false
+    }
 ];
+const employeePrompt = () => {
+    console.log(`
+====================
+  Add new Employee
+====================`);
+}
 const addEmployee = () => {
     return inquirer.prompt(profileQuestions)
     .then(employeeAnswers => {
@@ -109,6 +121,11 @@ const addEmployee = () => {
             employee = new Engineer(name, id, email, github);
         }
         teamProfile.push(employee);
+        if (employeeAnswers.confirmEmployee) {
+            return addEmployee(teamProfile)
+        }else{
+            return teamProfile;
+        }
     });
 }
     const writeFile = fileContent => {
@@ -122,7 +139,7 @@ const addEmployee = () => {
         });
     };
     addEmployee().then(teamProfile => {
-        return teamPage(teamProfile);
+        return generatePage(teamProfile);
     })
     .then(pageHTML => {
         return writeFile(pageHTML);
