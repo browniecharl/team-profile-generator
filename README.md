@@ -12,7 +12,7 @@ This application will help to create a team profile for a work environment. All 
 
 ## Usage
 Video of application in action
-[Tean-Profile-Video](https://drive.google.com/file/d/1gfe92x-ZUe8WrB71t8_oGbHai7qmpj-q/view)
+[Team-Profile-Video](https://drive.google.com/file/d/1gfe92x-ZUe8WrB71t8_oGbHai7qmpj-q/view)
 ### Screenshot
 ![](./src/team-profile.png)
 

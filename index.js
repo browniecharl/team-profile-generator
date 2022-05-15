@@ -9,13 +9,13 @@ const teamProfile = [];
 const profileQuestions = [ {
         type: 'list',
         name: 'role',
-        message: 'Choose your role on the team?',
+        message: 'Choose role of the team member:',
         choices: ['Intern', 'Manager', 'Engineer']
     },
     {
         type: 'input',
         name: 'name',
-        message: 'Enter the name of the employee?',
+        message: 'Enter the name of the employee:',
         validate: nameInput => {
             if (nameInput) {
                 return true;
@@ -28,7 +28,7 @@ const profileQuestions = [ {
     {
         type: 'input',
         name: 'id',
-        message: 'Enter the employees id number?',
+        message: 'Enter the employees id number:',
         validate: idInput => {
             if (idInput) {
                 return true;
@@ -41,7 +41,7 @@ const profileQuestions = [ {
     {
         type: 'input', 
         name: 'email',
-        message: 'Enter the employees email?',
+        message: 'Enter the employees email:',
         validate: emailInput => {
             if (emailInput) {
                 return true;
@@ -54,7 +54,7 @@ const profileQuestions = [ {
     {
         type: 'input',
         name: 'officeNumber',
-        message: 'Enter office number for manager.',
+        message: 'Enter office number for manager:',
         when: (officeNumberInput) => officeNumberInput.role === 'Manager',
         validate: officeNumberInput => {
             if (officeNumberInput) {
@@ -68,7 +68,7 @@ const profileQuestions = [ {
     {
         type: 'input', 
         name: 'school',
-        message: 'Enter name of interns school.',
+        message: 'Enter name of interns school:',
         when: (schoolInput) => schoolInput.role === 'Intern',
         validate: schoolInput => {
             if (schoolInput) {
@@ -82,7 +82,7 @@ const profileQuestions = [ {
     {
         type: 'input',
         name: 'github',
-        message: 'Enter gitHub username',
+        message: 'Enter gitHub username:',
         when: (githubInput) => githubInput.role === 'Engineer',
         validate: githubInput => {
             if (githubInput) {
