@@ -1,4 +1,5 @@
 const Manager = require('../lib/Manager');
+// Here are the tests to create an object for the role of manager
 
 test(' Will create object for Manager ', () => {
     const manager = new Manager('Robert', 4993, 'browniecharl@gmail.com', 409);

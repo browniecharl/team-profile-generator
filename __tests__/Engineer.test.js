@@ -1,4 +1,5 @@
 const Engineer = require ('../lib/Engineer');
+// Here are the tests to create an object for the role of engineer
 
 test(' Will create object for engineer ', () => {
     const engineer = new Engineer('Robert', 4993, 'browniecharl@gmail.com', 'browniecharl');

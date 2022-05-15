@@ -1,4 +1,5 @@
 const Employee = require('../lib/Employee');
+// Here are the tests to create a new employee object containing, employee name, id, email, and role
 
 test(' Will create the object for "employee" ', () => {
     const employee = new Employee('Robert', 4993, 'browniecharl@gmail.com');
